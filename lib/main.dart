@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
 
   // This widget is the root of your application.
   // This is a new comment 001
-  // This is a new comment 002
   @override
   Widget build(BuildContext context) {
     Get.find<PopularProductController>().getPopularProductList();
