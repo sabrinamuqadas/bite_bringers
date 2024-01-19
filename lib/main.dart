@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
-  // This is a new comment 001
   @override
   Widget build(BuildContext context) {
     Get.find<PopularProductController>().getPopularProductList();
