@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../models/cart_model.dart';
 import '../models/products_model.dart';
 
+// This is cart controller
 class CartController extends GetxController {
   final CartRepo cartRepo;
   CartController({required this.cartRepo});
