@@ -19,10 +19,12 @@ class PopularFoodDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var product = Get.find<PopularProductController>().popularProductList[pageId];
+    var product =
+        Get.find<PopularProductController>().popularProductList[pageId];
     //print("Page Id is"+pageId.toString());
     //print("Product name is"+ product.name.toString());
-    Get.find<PopularProductController>().initProduct(product, Get.find<CartController>());
+    Get.find<PopularProductController>()
+        .initProduct(product, Get.find<CartController>());
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -56,7 +58,31 @@ class PopularFoodDetail extends StatelessWidget {
                       Get.toNamed(RouteHelper.getInitial());
                     },
                     child: AppIcon(icon: Icons.arrow_back_ios)),
-                AppIcon(icon: Icons.shopping_cart_outlined),
+                GetBuilder<PopularProductController>(builder: (controller) {
+                  return Stack(
+                    children: [
+                      AppIcon(icon: Icons.shopping_cart_outlined),
+                      Get.find<PopularProductController>().totalItems >= 1
+                          ? Positioned(
+                              right: 0,
+                              top: 0,
+                              child: AppIcon(
+                                icon: Icons.circle,
+                                size: 20,
+                                iconColor: Colors.transparent,
+                                backgroundColor: AppColors.mainColor,
+                              ))
+                          : Container(),
+                      Get.find<PopularProductController>().totalItems >= 1
+                          ? Positioned(
+                          right: 0,
+                          top: 0,
+                          child:BigText(text: Get.find<PopularProductController>().totalItems.toString(),
+                          size: 12,color: Colors.white,),)
+                          : Container()
+                    ],
+                  );
+                }),
               ],
             ),
           ),
@@ -159,9 +185,9 @@ class PopularFoodDetail extends StatelessWidget {
                       borderRadius: BorderRadius.circular(Dimensions.radius20),
                       color: AppColors.mainColor),
                   child: GestureDetector(
-                    onTap: (){
-                    popularProduct.addItem(product);
-                  },
+                    onTap: () {
+                      popularProduct.addItem(product);
+                    },
                     child: BigText(
                       text: "\$ ${product.price!} | Add to cart",
                       color: Colors.white,
