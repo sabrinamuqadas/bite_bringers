@@ -24,4 +24,5 @@ class RecommendedProductController extends GetxController {
 
     }
   }
+
 }
