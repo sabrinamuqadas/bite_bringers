@@ -1,5 +1,6 @@
 import 'package:bite_bringers/Controllers/popular_product_controller.dart';
 import 'package:bite_bringers/Controllers/recommended_product_controller.dart';
+import 'package:bite_bringers/pages/cart/cart_page.dart';
 import 'package:bite_bringers/pages/food/popular_food_detail.dart';
 import 'package:bite_bringers/pages/food/recommended_food_detail.dart';
 import 'package:bite_bringers/pages/home/food_page_body.dart';
@@ -26,9 +27,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: MainFoodPage(),
-      initialRoute: RouteHelper.initial,
-      getPages: RouteHelper.routes,
+      home: CartPage(),
+      //initialRoute: RouteHelper.initial,
+      //getPages: RouteHelper.routes,
     );
   }
 }
