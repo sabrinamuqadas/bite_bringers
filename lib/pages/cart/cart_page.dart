@@ -42,11 +42,13 @@ class CartPage extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: Dimensions.height20 * 5,
+            top: Dimensions.height20*5,
             left: Dimensions.width20,
             right: Dimensions.width20,
             bottom: 0,
-            child: Container(),
+            child: Container(
+              color: Colors.red,
+            ),
           ),
         ],
       ),
