@@ -1,5 +1,6 @@
 import 'package:bite_bringers/Controllers/popular_product_controller.dart';
 import 'package:bite_bringers/Controllers/recommended_product_controller.dart';
+import 'package:bite_bringers/pages/cart/cart_page.dart';
 import 'package:bite_bringers/pages/home/main_food_page.dart';
 import 'package:bite_bringers/routes/route_helper.dart';
 import 'package:bite_bringers/utils/colors.dart';
@@ -48,11 +49,15 @@ class RecommendedFoodDetail extends StatelessWidget {
                             ? Positioned(
                                 right: 0,
                                 top: 0,
-                                child: AppIcon(
-                                  icon: Icons.circle,
-                                  size: 20,
-                                  iconColor: Colors.transparent,
-                                  backgroundColor: AppColors.mainColor,
+                                child: GestureDetector(onTap:(){
+                                  Get.to(()=> CartPage());
+                                },
+                                  child: AppIcon(
+                                    icon: Icons.circle,
+                                    size: 20,
+                                    iconColor: Colors.transparent,
+                                    backgroundColor: AppColors.mainColor,
+                                  ),
                                 ),
                               )
                             : Container(),
