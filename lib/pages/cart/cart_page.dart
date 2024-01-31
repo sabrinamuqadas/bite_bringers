@@ -1,6 +1,8 @@
 import 'package:bite_bringers/utils/colors.dart';
 import 'package:bite_bringers/utils/dimensions.dart';
 import 'package:bite_bringers/widgets/app_icon.dart';
+import 'package:bite_bringers/widgets/big_text.dart';
+import 'package:bite_bringers/widgets/small_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -48,12 +50,12 @@ class CartPage extends StatelessWidget {
             bottom: 0,
             child: Container(
               margin: EdgeInsets.only(top: Dimensions.height15),
-              color: Colors.red,
+              //color: Colors.red,
               child: ListView.builder(
                   itemCount: 10,
                   itemBuilder: (_, index) {
                     return Container(
-                      margin: EdgeInsets.only(top: Dimensions.height10),
+                      //margin: EdgeInsets.only(top: Dimensions.height10),
                      width: double.maxFinite,
                       height: Dimensions.height20*5,
                       child: Row(
@@ -67,9 +69,21 @@ class CartPage extends StatelessWidget {
                                 image: AssetImage("assets/image/icecream_2.jpg"),),
                               borderRadius: BorderRadius.circular(Dimensions.radius20),
                               color: Colors.white,
-
                             ),
                           ),
+                          SizedBox(width: Dimensions.width10),
+                          Expanded(child: Container(
+                            height: Dimensions.height20*5,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                BigText(text: "Ice Cream",
+                                color: Colors.black54),
+                                SmallText(text: "Sweet Tooth"),
+                              ],
+                            ),
+                          ),),
                         ],
                       ),
                     );
