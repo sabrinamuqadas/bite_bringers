@@ -37,6 +37,8 @@ class RouteHelper {
     ),
     GetPage(name: cartPage, page: (){
       return CartPage();
-    }),
+    },
+      transition: Transition.fadeIn,
+    ),
   ];
 }

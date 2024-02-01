@@ -1,5 +1,6 @@
 import 'package:bite_bringers/Controllers/cart_controller.dart';
 import 'package:bite_bringers/pages/home/main_food_page.dart';
+import 'package:bite_bringers/routes/route_helper.dart';
 import 'package:bite_bringers/utils/colors.dart';
 import 'package:bite_bringers/utils/dimensions.dart';
 import 'package:bite_bringers/widgets/app_icon.dart';
@@ -33,7 +34,7 @@ class CartPage extends StatelessWidget {
                 SizedBox(width: Dimensions.width20 * 5),
                 GestureDetector(
                   onTap: () {
-                    Get.to(() => MainFoodPage());
+                  Get.toNamed(RouteHelper.getInitial());
                   },
                   child: AppIcon(
                     icon: Icons.home_outlined,
@@ -63,8 +64,9 @@ class CartPage extends StatelessWidget {
                 context: context,
                 removeTop: true,
                 child: GetBuilder<CartController>(builder: (cartController) {
+                  var _cartList = cartController.getItems;
                   return ListView.builder(
-                      itemCount: cartController.getItems.length,
+                      itemCount: _cartList.length,
                       itemBuilder: (_, index) {
                         return Container(
                           width: double.maxFinite,
@@ -98,8 +100,7 @@ class CartPage extends StatelessWidget {
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
                                       BigText(
-                                          text: cartController
-                                              .getItems[index].name!,
+                                          text: _cartList[index].name!,
                                           color: Colors.black54),
                                       SmallText(text: "Sweet Tooth"),
                                       Row(
@@ -107,8 +108,7 @@ class CartPage extends StatelessWidget {
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           BigText(
-                                            text: cartController
-                                                .getItems[index].price!
+                                            text: _cartList[index].price!
                                                 .toString(),
                                             color: Colors.redAccent,
                                           ),
@@ -128,7 +128,7 @@ class CartPage extends StatelessWidget {
                                               children: [
                                                 GestureDetector(
                                                     onTap: () {
-                                                      //popularProduct.setQuantity(false);
+                                                      cartController.addItem(_cartList[index].product!, -1);
                                                     },
                                                     child: Icon(Icons.remove,
                                                         color: AppColors
@@ -138,7 +138,7 @@ class CartPage extends StatelessWidget {
                                                         Dimensions.width10 / 2),
                                                 BigText(
                                                     text:
-                                                        "0"), //popularProduct.inCartItems.toString()),
+                                                        _cartList[index].quantity.toString()), //popularProduct.inCartItems.toString()),
                                                 SizedBox(
                                                     width:
                                                         Dimensions.width10 / 2),
