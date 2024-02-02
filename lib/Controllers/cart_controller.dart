@@ -53,6 +53,7 @@ class CartController extends GetxController {
         );
       }
     }
+    update();
   }
 
   bool existInCart(ProductModel product) {
@@ -81,10 +82,17 @@ class CartController extends GetxController {
     });
     return totalQuantity;
   }
-
   List<CartModel> get getItems {
     return _items.entries.map((e) {
       return e.value;
     }).toList();
+  }
+  int get totalAmount{
+    var total=0;
+    _items.forEach((key, value) {
+      total+= value.quantity!*value.price!;
+    });
+
+    return total;
   }
 }
