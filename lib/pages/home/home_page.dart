@@ -18,7 +18,11 @@ class _HomePageState extends State<HomePage> {
     Container(child: Center(child: Text("Next next page"),),),
     Container(child: Center(child: Text("Next next next page"),),),
   ];
-
+   void onTapNav(int index){
+    setState(() {
+      _selectedIndex= index;
+    });
+   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,22 +32,25 @@ class _HomePageState extends State<HomePage> {
         unselectedItemColor: Colors.amberAccent,
         showSelectedLabels: false,
         showUnselectedLabels: false,
+
+        currentIndex: _selectedIndex,
+        onTap: onTapNav,
         items: const [
         BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined,),
           label: "home",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.home_outlined,),
-          label: "home",
+          icon: Icon(Icons.archive,),
+          label: "history",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.home_outlined,),
-          label: "home",
+          icon: Icon(Icons.shopping_cart,),
+          label: "cart",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.home_outlined,),
-          label: "home",
+          icon: Icon(Icons.person,),
+          label: "me",
         ),
       ],
 
