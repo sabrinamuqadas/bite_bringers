@@ -32,7 +32,8 @@ class _HomePageState extends State<HomePage> {
         unselectedItemColor: Colors.amberAccent,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-
+        selectedFontSize: 0.0,
+        unselectedFontSize: 0.0,
         currentIndex: _selectedIndex,
         onTap: onTapNav,
         items: const [
