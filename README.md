@@ -12,7 +12,7 @@ Bite Bringers is a full-stack food ecommerce application that allows users to ex
 
 ## Contributing
 
-We welcome contributions! If you have any ideas, bug reports, or feature requests, feel free to open an issue or submit a pull request. Your input is highly valuable.
+We welcome contributions! If you have any ideas, bug reports, or feature requests, feel free to open an issue or submit a pull request. Your input is highly valuables.
 
 ## Getting Started
 
