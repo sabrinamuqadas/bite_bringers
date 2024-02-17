@@ -12,6 +12,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../utils/app_constants.dart';
+
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
 
@@ -96,8 +98,9 @@ class CartPage extends StatelessWidget {
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
                                       fit: BoxFit.cover,
-                                      image: AssetImage(
-                                          "assets/image/icecream_2.jpg"),
+                                      image: NetworkImage(
+                                        AppConstants.BASE_URL + AppConstants.UPLOAD_URL + _cartList[index].image!,
+                                      ),
                                     ),
                                     borderRadius: BorderRadius.circular(
                                         Dimensions.radius20),

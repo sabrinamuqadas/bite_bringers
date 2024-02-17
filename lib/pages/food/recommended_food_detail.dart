@@ -13,6 +13,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 import '../../Controllers/cart_controller.dart';
+import '../../utils/app_constants.dart';
 
 class RecommendedFoodDetail extends StatelessWidget {
   final int pageId;
@@ -109,10 +110,9 @@ class RecommendedFoodDetail extends StatelessWidget {
             backgroundColor: AppColors.yellowColor,
             expandedHeight: 300,
             flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset(
-                "image/creamed_yuca.jpg",
-                width: double.maxFinite,
-                fit: BoxFit.cover,
+              background: Image.network(
+                AppConstants.BASE_URL + AppConstants.UPLOAD_URL + product.image!,
+                width: double.maxFinite, fit: BoxFit.cover,
               ),
             ),
           ),

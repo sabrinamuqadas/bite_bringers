@@ -145,8 +145,9 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                                     BorderRadius.circular(Dimensions.radius20),
                                 color: Colors.white38,
                                 image: DecorationImage(
-                                  image: AssetImage(
-                                    "image/creamed_yuca.jpg",
+                                  image: NetworkImage(
+                                    AppConstants.BASE_URL +
+                                        AppConstants.UPLOAD_URL + recommendedProducts.recommendedProductList[index].image!,
                                   ),
                                   fit: BoxFit.cover,
                                 ),
@@ -258,7 +259,10 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage("image/icecream_2.jpg"),
+                  image: NetworkImage(
+                    AppConstants.BASE_URL +
+                        AppConstants.UPLOAD_URL + popularProduct.image!,
+                  ),
                 ),
               ),
             ),

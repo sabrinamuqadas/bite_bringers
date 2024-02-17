@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import '../../routes/route_helper.dart';
+import '../../utils/app_constants.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   final int pageId;
@@ -41,7 +42,9 @@ class PopularFoodDetail extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage("image/icecream_2.jpg"),
+                  image: NetworkImage(
+                    AppConstants.BASE_URL + AppConstants.UPLOAD_URL + product.image!,
+                  ),
                 ),
               ),
             ),
