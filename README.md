@@ -16,7 +16,7 @@ We welcome contributions! If you have any ideas, bug reports, or feature request
 
 ## Getting Started
 
-To run Bite Bringers (E-commerce App) locally, follow these steps:
+To run Bite Bringers (E-commerce App) locally, follow these step:
 
 1. Clone the repository:
 
