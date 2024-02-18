@@ -68,3 +68,5 @@ To run Bite Bringers locally, follow these steps:
 Bite Bringers is licensed under the [MIT License](LICENSE).
 
 Enjoy your delightful food journey with Bite Bringers! 🍔🛒
+
+Revied.
