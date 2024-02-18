@@ -1,6 +1,6 @@
 # Bite Bringers - Food E-commerce App
 
-![Bite Bringers Logo](https://img.freepik.com/premium-vector/catering-quality-food-design-logo_187482-593.jpg)
+![Bite Bringers Logo](https://seeklogo.com/images/F/food-logo-59E5A73AFD-seeklogo.com.png)
 
 Welcome to Bite Bringers, your go-to destination for a delightful food ordering experience. This full-stack Flutter-based E-commerce application brings you a diverse selection of restaurants and cuisines, making it easy to satisfy your cravings and enjoy delicious meals at your convenience.
 
