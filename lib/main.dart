@@ -5,6 +5,7 @@ import 'package:bite_bringers/pages/food/popular_food_detail.dart';
 import 'package:bite_bringers/pages/food/recommended_food_detail.dart';
 import 'package:bite_bringers/pages/home/food_page_body.dart';
 import 'package:bite_bringers/pages/home/main_food_page.dart';
+import 'package:bite_bringers/pages/splash/splash_page.dart';
 import 'package:bite_bringers/routes/route_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,13 +23,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    Get.find<PopularProductController>().getPopularProductList();
-    Get.find<RecommendedProductController>().getRecommendedProductList();
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      initialRoute: RouteHelper.initial,
-      getPages: RouteHelper.routes,
-    );
+
+  return GetBuilder<PopularProductController>(builder: (_){
+    return GetBuilder<RecommendedProductController>(builder: (_){
+      return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        //home: SplashScreen(),
+        initialRoute: RouteHelper.getSplashPage(),
+        getPages: RouteHelper.routes,
+      );
+    });
+  });
   }
 }
