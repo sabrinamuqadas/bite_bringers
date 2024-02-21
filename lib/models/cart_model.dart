@@ -39,7 +39,8 @@ class CartModel {
       "image": this.image,
       "quantity": this.quantity,
       "isExist": this.isExist,
-      "time":this.time,
+      "time": this.time,
+      "product": this.product!.toJson(),
     };
   }
 }

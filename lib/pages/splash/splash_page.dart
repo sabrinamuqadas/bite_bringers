@@ -36,6 +36,12 @@ class _SplashScreenState extends State<SplashScreen>
     animation = CurvedAnimation(parent: controller, curve: Curves.linear);
     Timer(const Duration(seconds: 4), () => Get.offNamed(RouteHelper.getInitial()));
   }
+  @override
+  void dispose() {
+    // Dispose the AnimationController to release the Ticker
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
