@@ -1,3 +1,4 @@
+import 'package:bite_bringers/Controllers/cart_controller.dart';
 import 'package:bite_bringers/Controllers/popular_product_controller.dart';
 import 'package:bite_bringers/Controllers/recommended_product_controller.dart';
 import 'package:bite_bringers/pages/cart/cart_page.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
+   Get.find<CartController>().getCartData();
   return GetBuilder<PopularProductController>(builder: (_){
     return GetBuilder<RecommendedProductController>(builder: (_){
       return GetMaterialApp(

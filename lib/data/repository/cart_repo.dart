@@ -21,16 +21,16 @@ class CartRepo {
 
     getCartList();
   }
+
   //retrieving items/data from local storage
   List< CartModel> getCartList(){
-
     List<String> carts = [];
     if(sharedPreferences.containsKey(AppConstants.CART_LIST)){
       carts = sharedPreferences.getStringList(AppConstants.CART_LIST)!;
       print("inside getCartList"+carts.toString());
     }
     List<CartModel> cartList = [];
-    carts.forEach((element)=>CartModel.fromJson(jsonDecode(element)));
+    carts.forEach((element)=> cartList.add(CartModel.fromJson(jsonDecode(element))));
 
     return cartList;
   }
