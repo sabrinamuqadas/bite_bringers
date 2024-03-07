@@ -120,6 +120,7 @@ class CartController extends GetxController {
     clear();
   }
   void clear(){
-    
+    _items = {};
+    update();
   }
 }
