@@ -100,7 +100,8 @@ class CartController extends GetxController {
 
     return total;
   }
-
+  //This getCartDat()method only gets call when we restart app, at that time
+  //we will see if we have any info/item in our storage or not
   List<CartModel>getCartData(){
     setCart = cartRepo.getCartList();
     return storageItems;
@@ -110,9 +111,15 @@ class CartController extends GetxController {
     storageItems = items;
     print("length of cart items is "+ storageItems.length.toString());
     for(int i=0; i<storageItems.length; i++){
-      for(i=0; i<storageItems.length; i++){
+//if we have any info/item in our storage then we put it in our _items{} map
         _items.putIfAbsent(storageItems[i].product!.id!, () => storageItems[i]);
-      }
     }
+  }
+  void addToHistory(){
+    cartRepo.addToCartHistoryList();
+    clear();
+  }
+  void clear(){
+    
   }
 }
