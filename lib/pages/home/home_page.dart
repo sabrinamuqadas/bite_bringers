@@ -1,3 +1,4 @@
+import 'package:bite_bringers/pages/cart/cart_history.dart';
 import 'package:bite_bringers/pages/home/main_food_page.dart';
 import 'package:bite_bringers/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   List pages = [
     MainFoodPage(),
     Container(child: Center(child: Text("Next page"),),),
-    Container(child: Center(child: Text("Next next page"),),),
+    CartHistory(),
     Container(child: Center(child: Text("Next next next page"),),),
   ];
    void onTapNav(int index){
