@@ -55,7 +55,7 @@ class ProductModel {
     description = json['description'];
     price = json['price'];
     stars = json['ratings'];
-    image = json['image'];
+    image = json['img'];
     location = json['location'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];

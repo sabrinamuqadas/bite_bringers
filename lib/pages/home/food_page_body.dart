@@ -183,23 +183,26 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                                       SizedBox(height: Dimensions.height10),
                                       SmallText(text: "A Tropical Delight"),
                                       SizedBox(height: Dimensions.height10),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          IconAndTextWidget(
-                                              icon: Icons.circle_sharp,
-                                              text: "Normal",
-                                              iconColor: AppColors.iconColor1),
-                                          IconAndTextWidget(
-                                              icon: Icons.location_on,
-                                              text: "17km",
-                                              iconColor: AppColors.mainColor),
-                                          IconAndTextWidget(
-                                              icon: Icons.access_time_rounded,
-                                              text: "32min",
-                                              iconColor: AppColors.iconColor2),
-                                        ],
+                                      Expanded(
+                                        flex: 1,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            IconAndTextWidget(
+                                                icon: Icons.circle_sharp,
+                                                text: "Normal",
+                                                iconColor: AppColors.iconColor1),
+                                            IconAndTextWidget(
+                                                icon: Icons.location_on,
+                                                text: "17km",
+                                                iconColor: AppColors.mainColor),
+                                            IconAndTextWidget(
+                                                icon: Icons.access_time_rounded,
+                                                text: "32min",
+                                                iconColor: AppColors.iconColor2),
+                                          ],
+                                        ),
                                       ),
                                     ],
                                   ),
