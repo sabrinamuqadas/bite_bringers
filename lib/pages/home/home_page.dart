@@ -1,4 +1,5 @@
 import 'package:bite_bringers/pages/account/account_page.dart';
+import 'package:bite_bringers/pages/auth/sign_up_page.dart';
 import 'package:bite_bringers/pages/cart/cart_history.dart';
 import 'package:bite_bringers/pages/home/main_food_page.dart';
 import 'package:bite_bringers/utils/colors.dart';
@@ -18,7 +19,7 @@ class _HomePageState extends State<HomePage> {
 
   List pages = [
     MainFoodPage(),
-    Container(child: Center(child: Text("Next page"),),),
+    SignUpPage(),
     CartHistory(),
     AccountPage(),
   ];
