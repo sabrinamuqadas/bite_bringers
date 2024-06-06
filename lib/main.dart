@@ -1,6 +1,7 @@
 import 'package:bite_bringers/Controllers/cart_controller.dart';
 import 'package:bite_bringers/Controllers/popular_product_controller.dart';
 import 'package:bite_bringers/Controllers/recommended_product_controller.dart';
+import 'package:bite_bringers/pages/auth/sign_up_page.dart';
 import 'package:bite_bringers/pages/cart/cart_page.dart';
 import 'package:bite_bringers/pages/food/popular_food_detail.dart';
 import 'package:bite_bringers/pages/food/recommended_food_detail.dart';
@@ -27,12 +28,13 @@ class MyApp extends StatelessWidget {
    Get.find<CartController>().getCartData();
   return GetBuilder<PopularProductController>(builder: (_){
     return GetBuilder<RecommendedProductController>(builder: (_){
-      return GetMaterialApp(
+      return const GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
+        home: SignUpPage(),
         //home: SplashScreen(),
-        initialRoute: RouteHelper.getSplashPage(),
-        getPages: RouteHelper.routes,
+        //initialRoute: RouteHelper.getSplashPage(),
+        //getPages: RouteHelper.routes,
       );
     });
   });
