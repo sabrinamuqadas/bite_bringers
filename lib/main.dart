@@ -1,6 +1,7 @@
 import 'package:bite_bringers/Controllers/cart_controller.dart';
 import 'package:bite_bringers/Controllers/popular_product_controller.dart';
 import 'package:bite_bringers/Controllers/recommended_product_controller.dart';
+import 'package:bite_bringers/pages/auth/sign_in_page.dart';
 import 'package:bite_bringers/pages/auth/sign_up_page.dart';
 import 'package:bite_bringers/pages/cart/cart_page.dart';
 import 'package:bite_bringers/pages/food/popular_food_detail.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       return const GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        home: SignUpPage(),
+        home: SignInPage(),
         //home: SplashScreen(),
         //initialRoute: RouteHelper.getSplashPage(),
         //getPages: RouteHelper.routes,
