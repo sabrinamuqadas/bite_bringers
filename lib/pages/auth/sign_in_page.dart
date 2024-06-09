@@ -18,8 +18,7 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var emailController = TextEditingController();
     var passwordController = TextEditingController();
-    var nameController = TextEditingController();
-    var phoneController = TextEditingController();
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
