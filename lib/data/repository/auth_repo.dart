@@ -1,6 +1,7 @@
 import 'package:bite_bringers/data/api/api_client.dart';
 import 'package:bite_bringers/models/signup_body_model.dart';
 import 'package:bite_bringers/utils/app_constants.dart';
+import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthRepo{
@@ -12,7 +13,13 @@ class AuthRepo{
     required this.sharedPreferences,
 });
 
-  registration(SignUpBody signUpBody){
-    apiClient.postData(AppConstants.REGISTRATION_URI, body)
+  Future<Response>  registration(SignUpBody signUpBody) async {
+    return await apiClient.postData(AppConstants.REGISTRATION_URI, signUpBody.toJson());
   }
+
+  saveUserToken(String token) async {
+    apiClient.token = token;
+    apiClient.updateHeader(token);
+    return await  sharedPreferences.setString(AppConstants.TOKEN, token);
+ }
 }
